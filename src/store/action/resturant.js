@@ -23,6 +23,25 @@ export const productget =()=>{
                 })
         })
     }
+    export const updatetodo = (updatedtodo,id) =>{
+        console.log(updatedtodo)
+        return(dispatch) =>{
+    
+            axios
+            .put(`${url}/todos/${id}`, updatedtodo)
+            .then(todo => {
+                    console.log(todo)
+                dispatch({
+                    type : "Resturant",
+                     todo
+                }) 
+            })
+            .catch(error=>{
+            console.log(error)
+           
+            })
+        }
+    }
 
 export const searchaction = (search)=>{
 

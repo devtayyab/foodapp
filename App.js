@@ -3,7 +3,7 @@ import {store} from './src/store/store'
 import {Provider} from 'react-redux'
 import {View, LogBox} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+  import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {createDrawerNavigator} from '@react-navigation/drawer';
