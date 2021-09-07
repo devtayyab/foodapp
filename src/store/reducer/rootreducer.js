@@ -4,6 +4,6 @@ import userreducer from './userreducer'
 import { cartReducer } from "./cardreducer";
 export const reducer = combineReducers({
 
-    resturant: productreducer,
+    product: productreducer,
     
 })

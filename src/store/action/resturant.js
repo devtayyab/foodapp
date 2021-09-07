@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {uri} from '../../api/productapi'
+import {uri} from '../../api/api'
 export const productadd =(products)=>{
 console.log(products)
     return(dispatch=>{
@@ -14,14 +14,19 @@ console.log(products)
 }
 export const productget =()=>{
         return(async(dispatch)=>{
-    
-                const  {data} = await axios.get(`${uri}/product`)
-                console.log(data)
-                dispatch({
-                    type: "GETPRODUCT",
-                    payload : data
-                })
+    try{
+        const  data = await axios.post(`${uri}/product/getByOwner`, { owner:"612534601ba0470016df52ea"})
+        console.log(data)
+        dispatch({
+            type: "GETPRODUCT",
+            payload : data
         })
+    }
+    catch (error) {
+        console.log("hello",error.message) 
+     }
+               })
+               
     }
     export const updatetodo = (updatedtodo,id) =>{
         console.log(updatedtodo)

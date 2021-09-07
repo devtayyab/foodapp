@@ -1,1 +1,1 @@
-export const useruri = 'https://food-app-native.herokuapp.com/api/user/'
+export const useruri = 'https://foodappnative.herokuapp.com/api'

@@ -6,8 +6,10 @@ import Logo from "../../assets/innerLogo.jpeg";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import Geolocation from '@react-native-community/geolocation';
 import MapView from 'react-native-maps';
-
+import {useDispatch, useSelector} from 'react-redux'
+import { productget } from '../../store/action/resturant';
 const Home = ({ navigation }) => {
+    const dispatch = useDispatch()
     const [region, setRegion] = useState(null);
     const _data = [{ name: "Pasta" }, { name: "Pizza" }, { name: "Burger" }, { name: "Steak" }, { name: "Sushi" }, { name: "Salad" }, { name: "Cake" }, { name: "Donut" }]
     const _numColumns = 2;
@@ -17,11 +19,14 @@ const Home = ({ navigation }) => {
             <Text style={{ fontWeight: "bold", color: "#777", marginTop: 10 }}>{item.name}</Text>
         </TouchableOpacity>
     }
-
+const resturant = useSelector(state=>state)
+console.log("state", resturant)
     useEffect(() => {
         requestLocationPermission();
     }, [])
-
+useEffect(()=>{
+    dispatch(productget())
+})
     const get_current_location = () => {
         Geolocation.getCurrentPosition(
             (position) => {

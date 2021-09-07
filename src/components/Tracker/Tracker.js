@@ -27,14 +27,14 @@ destination:  {
 }
 )
  var mapView = null     
-  // onMapPress = (e) => {
-  //   this.setState({
-  //     coordinates: [
-  //       ...this.state.coordinates,
-  //       e.nativeEvent.coordinate,
-  //     ],
-  //   });
-  // }
+    // onMapPress = (e) => {
+    //   this.setState({
+    //     coordinates: [
+    //       ...this.state.coordinates,
+    //       e.nativeEvent.coordinate,
+    //     ],
+    //   });
+    // }
   useEffect(()=>{
     GetLocation.getCurrentPosition({
         enableHighAccuracy: true,

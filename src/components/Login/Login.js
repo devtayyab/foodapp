@@ -35,7 +35,7 @@ const Login = ({navigation}) => {
   // console.log("signin",userRegister)
   const handleSignIn = async (e)=> {
     dispatch(Signinaction(user,navigation))
-    // navigation.navigate('Home')
+    navigation.navigate('Home')
     // e.preventDefault()
     // const params=JSON.stringify(user)
     //  axios.post('https://food-app-native.herokuapp.com/api/user/login', user)
@@ -86,9 +86,7 @@ const Login = ({navigation}) => {
       
         <View style={{flexDirection: 'row', paddingLeft: 10}}>
       
-          <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-           
-          </TouchableOpacity>
+          
         </View>
         <TouchableOpacity
           style={{paddingHorizontal: 50}}>
